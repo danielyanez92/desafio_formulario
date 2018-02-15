@@ -1,0 +1,27 @@
+<h1>Ingresar Producto</h1>
+<p><%= notice %></p>
+<%= form_with(model: @sale, local: true) do |f|  %>
+
+  <%= f.label 'Detalles Venta' %>
+  <br>
+  <%= f.text_area :detail, size:'50x10' %>
+  <br>
+  <%= f.label 'Categoria Producto' %>
+  <br>
+  <%= f.number_field :category, id: :category_content %>
+  <br>
+  <%= f.label 'Valor Producto' %>
+  <br>
+  <%= f.number_field :value, id: :value_content %>
+  <br>
+  <%= f.label 'Descuento que se le aplicara al Producto' %>
+  <br>
+  <%= f.number_field :discount, min: 0, max:40, id: :discount_content %>
+  <br>
+  <%= f.label 'Exento de IVA' %>
+  <br>
+  <%= f.check_box :iva %>
+  <br>
+  <%= f.submit 'Crear' %>
+<% end %>
+<%= link_to 'Ver en Tabla', sales_done_path %>
